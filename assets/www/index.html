@@ -18,31 +18,78 @@
 	
 	<!-- <<<<<<<<<< JAVASCRIPT >>>>>>>>>> -->
 		<script type="text/javascript">
-		
 			// TODO
 			
-			document.addEventListener("deviceready", onDeviceReady, false);
-			
-			function onDeviceReady(){
-				
-				console.log("YOUR DEVICE IS READY");
-			}
-		
 		</script>
 		
 	<!-- <<<<<<<<<<<<>>>>>>>>>>>>>>>> -->
 	
 	<title>firstTestApp</title>
+	<style>
+	</style>
+	
+	
     <body>
-    	<div data-role="header" data-position="fixed">
+	<div data-role="page" id="home">
+    	<div data-role="header" data-position="">
 		  <h1>First Test App</h1>
 		</div>
-		<div data-role="container">
+		<div data-role="content">
 			<ul data-role="listview">
-			  <li><a href="#camera.html">Camera</a></li>
-			  <li><a href="localStorage.html">LocalStorage</a></li>
-			  <li><a href="geolocation.html">Geolocation</a></li>
+				<li>
+					<a href="#camera">
+						<img src="img/camera.png">
+						<h3>Camera</h3>
+						<p>Open your Camera</p>
+					</a>
+				</li>
+				<li>
+					<a href="#localStorage">
+						<img src="img/storage.jpg">
+						<h3>Local Storage</h3>
+						<p>Manage your Local Storage</p>
+					</a>
+				</li>
+				<li>
+					<a href="#geolocation" >
+						<img src="img/marker.jpg">
+						<h3>Geolocation</h3>
+						<p>Get you current Position</p>
+					</a>
+				</li>
 			</ul>
 		</div>
-    </body>
+		<div data-role="footer" data-position="fixed">
+		  <h1>COPY</h1>
+		</div>
+	</div>
+	<div data-role="page" id="camera">
+		<div data-role="header" data-position="fixed">
+		  <h1>Camera Page</h1>
+		</div>
+		<div data-role="content">
+			<h1>CAMERA</h1>
+			<a href="#home" class="ui-link-inherit">back</a>
+		</div>
+	</div>
+    <div data-role="page" id="localStorage">
+		<div data-role="header" data-position="fixed">
+		  <h1>Local Storage Page</h1>
+		</div>
+		<div data-role="content">
+			<h1>LOCAL STORAGE</h1>
+			<a href="#home" class="ui-link-inherit">back</a>
+		</div>
+	</div>
+	<div data-role="page" id="geolocation">
+		<div data-role="header" data-position="fixed">
+		  <h1>Geolocation Page</h1>
+		</div>
+		<div data-role="content">
+			<h1>GEOLOCATION</h1>
+			<a href="#home" class="ui-link-inherit">back</a>
+		</div>
+	</div>
+	</div>
+	</body>
 </html>
