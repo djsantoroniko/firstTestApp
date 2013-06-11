@@ -19,6 +19,19 @@
 	<title>firstTestApp</title>
 
 	<style>
+	  .overlay {  
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		z-index:1000;
+	  }
+	  
+	  .normal {
+		width:100%;
+	  }
+	  
 	</style>
 	
 	
@@ -65,7 +78,10 @@
 			<h1>CAMERA</h1>
 			<div data-role="controlgroup">
 			  <a data-role="button" onClick="takePicture();">Take a Picture</a>
-			  <a data-role="button" onClick="openLibray();">Open your Library</a>
+			  <a data-role="button" onClick="getPhoto();">Open your Library</a>
+			</div>
+			<div id="original" style="width:100%;">
+				<img src="" alt="" id="image" class="normal"/>
 			</div>
 		</div>
 	</div>
