@@ -1,8 +1,6 @@
 //In this file there are functions related to the camera
 
 function takePicture(){
-
-	alert("take a picture");
 	
 	/*var popover = new CameraPopoverOptions(300,300,100,100,Camera.PopoverArrowDirection.ARROW_ANY);
 	var options = { quality: 50, destinationType: Camera.DestinationType.DATA_URL, popoverOptions : popover };
