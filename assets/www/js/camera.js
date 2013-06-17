@@ -1,10 +1,7 @@
 //In this file there are functions related to the camera
 
 function takePicture(){
-	
-	/*var popover = new CameraPopoverOptions(300,300,100,100,Camera.PopoverArrowDirection.ARROW_ANY);
-	var options = { quality: 50, destinationType: Camera.DestinationType.DATA_URL, popoverOptions : popover };
-	*/
+
 	navigator.camera.getPicture(onSuccess, onFail, { quality: 25, 
 		destinationType: Camera.DestinationType.FILE_URI }); 
 
@@ -24,8 +21,7 @@ function takePicture(){
       navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
         destinationType: Camera.DestinationType.FILE_URI,
         sourceType: 0,
-		correctOrientation: true,
-		allowEdit : true,
+		correctOrientation: false,
 		targetWidth: 500,
 		targetHeight: 500});
     }

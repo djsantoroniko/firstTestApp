@@ -8,101 +8,116 @@
 		<link rel="stylesheet" href="js/jquery.mobile-1.3.1.min.css"/>
 		<link rel="stylesheet" href="js/jquery.mobile.theme-1.3.1.min.css"/>
 		<link rel="stylesheet" href="js/jquery.mobile.structure-1.3.1.min.css"/>
+		<link rel="stylesheet" href="css/index.css"/>
 		
 		<script src="js/jquery-1.10.1.min.js"></script>
 		<script src="js/jquery.mobile-1.3.1.min.js"></script>
 		<script src="js/camera.js"></script>
-        <script type="text/javascript" src="cordova-2.7.0.js"></script>
+		<script src="js/geolocation.js"></script>
+        <!--<script type="text/javascript" src="cordova-2.7.0.js"></script>-->
 
     </head>
 
 	<title>firstTestApp</title>
-
-	<style>
-	  .overlay {  
-		position:absolute;
-		top:0;
-		left:0;
-		width:100%;
-		height:100%;
-		z-index:1000;
-	  }
-	  
-	  .normal {
-		width:100%;
-	  }
-	  
-	</style>
-	
 	
     <body>
-	<div data-role="page" id="home">
-    	<div data-role="header" data-position="">
-		  <h1>First Test App</h1>
-		</div>
-		<div data-role="content">
-			<ul data-role="listview">
-				<li>
-					<a href="#camera">
-						<img src="img/camera.png">
-						<h3>Camera</h3>
-						<p>Open your Camera</p>
-					</a>
-				</li>
-				<li>
-					<a href="#localStorage">
-						<img src="img/storage.jpg">
-						<h3>Local Storage</h3>
-						<p>Manage your Local Storage</p>
-					</a>
-				</li>
-				<li>
-					<a href="#geolocation" >
-						<img src="img/marker.jpg">
-						<h3>Geolocation</h3>
-						<p>Get you current Position</p>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div data-role="footer" data-position="fixed">
-		  <h1>COPY</h1>
-		</div>
-	</div>
-	<div data-role="page" id="camera">
-		<div data-role="header" data-position="fixed">
-		  <h1>Camera Page</h1>
-		  <a href="#home">back</a>
-		</div>
-		<div data-role="content">
-			<h1>CAMERA</h1>
-			<div data-role="controlgroup">
-			  <a data-role="button" onClick="takePicture();">Take a Picture</a>
-			  <a data-role="button" onClick="getPhoto();">Open your Library</a>
+		<div data-role="page" id="home">
+	    	<div data-role="header" data-position="">
+			  <h1>First Test App</h1>
 			</div>
-			<div id="original" style="width:100%;">
-				<img src="" alt="" id="image" class="normal"/>
+			<div data-role="content">
+				<ul data-role="listview">
+					<li>
+						<a href="#camera">
+							<img src="img/camera.png">
+							<h3>Camera</h3>
+							<p>Open your Camera</p>
+						</a>
+					</li>
+					<li>
+						<a href="#geolocation" >
+							<img src="img/marker.jpg">
+							<h3>Geolocation</h3>
+							<p>Get you current Position</p>
+						</a>
+					</li>
+					<li>
+						<a href="#localStorage">
+							<img src="img/storage.jpg">
+							<h3>Local Storage</h3>
+							<p>Manage your Local Storage</p>
+						</a>
+					</li>
+					<li>
+						<a href="#facebookPage">
+							<img src="img/facebook_list.png">
+							<h3>Facebook</h3>
+							<p>Configure your account Facebook</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div data-role="footer" data-position="fixed">
+			  <h1>COPY</h1>
 			</div>
 		</div>
-	</div>
-    <div data-role="page" id="localStorage">
-		<div data-role="header" data-position="fixed">
-		  <h1>Local Storage Page</h1>
+		<div data-role="page" id="camera">
+			<div data-role="header" data-position="fixed">
+			  <h1>Camera Page</h1>
+			  <a href="#home">Back</a>
+			</div>
+			<div data-role="content">
+				<h1 class="titlePage">CAMERA</h1>
+				<div data-role="controlgroup">
+				  <a data-role="button" onClick="takePicture();">Take a Picture</a>
+				  <a data-role="button" onClick="getPhoto();">Open your Library</a>
+				</div>
+				<div id="original" style="width:100%;">
+					<img src="" alt="" id="image" class="normal"/>
+				</div>
+			</div>
 		</div>
-		<div data-role="content">
-			<h1>LOCAL STORAGE</h1>
-			<a href="#home" class="ui-link-inherit">back</a>
+		<div data-role="page" id="geolocation">
+			<div data-role="header" data-position="fixed">
+			  <h1>Geolocation Page</h1>
+			  <a href="#home">Back</a>
+			</div>
+			<div data-role="content">
+				<h1 class="titlePage">GEOLOCATION</h1>
+				<a data-role="button" onClick="getCurrentPosition();">Get current Position</a>
+					<div id="divListProperty">
+						<ul id="listProperty" data-role="listview" data-theme="c">
+							<li class="listGeolocation">
+								<span id="latitude" class="titleProperty"></span>
+							</li>
+							<li class="listGeolocation">
+								<span id="longitude" class="titleProperty"></span>
+							</li>
+							<li class="listGeolocation">
+								<span id="altitude" class="titleProperty"></span>
+							</li>
+						</ul>
+						<img id="mapImage" src="" alt=""/>
+					</div>
+			</div>
 		</div>
-	</div>
-	<div data-role="page" id="geolocation">
-		<div data-role="header" data-position="fixed">
-		  <h1>Geolocation Page</h1>
+	    <div data-role="page" id="localStorage">
+			<div data-role="header" data-position="fixed">
+			  <h1>Local Storage Page</h1>
+			  <a href="#home">Back</a>
+			</div>
+			<div data-role="content">
+				<h1 class="titlePage">LOCAL STORAGE</h1>
+			</div>
 		</div>
-		<div data-role="content">
-			<h1>GEOLOCATION</h1>
-			<a href="#home" class="ui-link-inherit">back</a>
+		<div data-role="page" id="facebookPage">
+			<div data-role="header" data-position="fixed">
+			  <h1>Facebook Configuration Page</h1>
+			  <a href="#home">Back</a>
+			</div>
+			<div data-role="content">
+				<h1 class="titlePage">FACEBOOK CONFIGURATION</h1>
+			</div>
 		</div>
-	</div>
-	</div>
 	</body>
 </html>
