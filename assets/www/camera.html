@@ -22,15 +22,23 @@
 	
 	<script type="text/javascript">
 		
-		document.addEventListener("backbutton", backKeyDown, true);
-
-		function backKeyDown() {
-			// do something here if you wish
-			alert('go back!');
+		function onLoad(){
+			alert("onLoad");
+			document.addEventListener("deviceready", onDeviceReady, false);
 		}
+		
+		function onDeviceReady(){
+			alert("Device Ready");
+			document.addEventListener("backbutton", onBackKeyButton, false);		
+		}
+		
+		function onBackKeyButton(){
+			alert("BackKeyButton");
+		}
+		
 	</script>
 	
-    <body>
+    <body onload="onLoad()">
 		<div data-role="page" id="home">
 	    	<div data-role="header" data-position="">
 			<h1>Camera</h1>
