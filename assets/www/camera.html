@@ -22,6 +22,11 @@
 	
 	<script type="text/javascript">
 		
+		$('#body').ready(function(){
+			onLoad();
+		});		
+
+
 		function onLoad(){
 			alert("onLoad");
 			document.addEventListener("deviceready", onDeviceReady, false);
@@ -38,7 +43,7 @@
 		
 	</script>
 	
-    <body onload="onLoad()">
+    <body>
 		<div data-role="page" id="home">
 	    	<div data-role="header" data-position="">
 			<h1>Camera</h1>
