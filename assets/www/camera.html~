@@ -20,6 +20,16 @@
 
 	<title>Camera</title>
 	
+	<script type="text/javascript">
+		
+		document.addEventListener("backbutton", backKeyDown, true);
+
+		function backKeyDown() {
+			// do something here if you wish
+			alert('go back!');
+		}
+	</script>
+	
     <body>
 		<div data-role="page" id="home">
 	    	<div data-role="header" data-position="">
